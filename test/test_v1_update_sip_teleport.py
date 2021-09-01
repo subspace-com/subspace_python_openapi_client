@@ -13,15 +13,13 @@ import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_next_page import V1NextPage
-from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-globals()['V1NextPage'] = V1NextPage
-globals()['V1SipTeleportResponse'] = V1SipTeleportResponse
-from subspace_openapi_client.model.v1_list_sip_teleport_response import V1ListSipTeleportResponse
+from subspace_openapi_client.model.v1_sip_teleport_status import V1SipTeleportStatus
+globals()['V1SipTeleportStatus'] = V1SipTeleportStatus
+from subspace_openapi_client.model.v1_update_sip_teleport import V1UpdateSipTeleport
 
 
-class TestV1ListSipTeleportResponse(unittest.TestCase):
-    """V1ListSipTeleportResponse unit test stubs"""
+class TestV1UpdateSipTeleport(unittest.TestCase):
+    """V1UpdateSipTeleport unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +27,10 @@ class TestV1ListSipTeleportResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testV1ListSipTeleportResponse(self):
-        """Test V1ListSipTeleportResponse"""
+    def testV1UpdateSipTeleport(self):
+        """Test V1UpdateSipTeleport"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = V1ListSipTeleportResponse()  # noqa: E501
+        # model = V1UpdateSipTeleport()  # noqa: E501
         pass
 
 

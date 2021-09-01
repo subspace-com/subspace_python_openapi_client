@@ -4,19 +4,17 @@ All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sip_teleport_service_create**](SipTeleportServiceApi.md#sip_teleport_service_create) | **POST** /v1/sip-teleports | CreateSipTeleport
-[**sip_teleport_service_delete**](SipTeleportServiceApi.md#sip_teleport_service_delete) | **DELETE** /v1/sip-teleports/{id} | DeleteSipTeleport
-[**sip_teleport_service_get**](SipTeleportServiceApi.md#sip_teleport_service_get) | **GET** /v1/sip-teleports/{id} | GetSipTeleport
-[**sip_teleport_service_list**](SipTeleportServiceApi.md#sip_teleport_service_list) | **GET** /v1/sip-teleports | ListSipTeleports
-[**sip_teleport_service_update**](SipTeleportServiceApi.md#sip_teleport_service_update) | **PUT** /v1/sip-teleports/{id} | UpdateSipTeleport
+[**sip_teleport_service_create**](SipTeleportServiceApi.md#sip_teleport_service_create) | **POST** /v1/sip-teleports | 
+[**sip_teleport_service_delete**](SipTeleportServiceApi.md#sip_teleport_service_delete) | **DELETE** /v1/sip-teleports/{id} | 
+[**sip_teleport_service_get**](SipTeleportServiceApi.md#sip_teleport_service_get) | **GET** /v1/sip-teleports/{id} | 
+[**sip_teleport_service_list**](SipTeleportServiceApi.md#sip_teleport_service_list) | **GET** /v1/sip-teleports | 
+[**sip_teleport_service_update**](SipTeleportServiceApi.md#sip_teleport_service_update) | **PUT** /v1/sip-teleports/{id} | 
 
 
 # **sip_teleport_service_create**
-> V1SipTeleportResponse sip_teleport_service_create()
+> V1SipTeleportResponse sip_teleport_service_create(v1_create_sip_teleport)
 
-CreateSipTeleport
 
-CreateSipTeleport creates a new SIP Teleport
 
 ### Example
 
@@ -25,8 +23,8 @@ CreateSipTeleport creates a new SIP Teleport
 import time
 import subspace_openapi_client
 from subspace_openapi_client.api import sip_teleport_service_api
+from subspace_openapi_client.model.v1_create_sip_teleport import V1CreateSipTeleport
 from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -49,11 +47,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with subspace_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = sip_teleport_service_api.SipTeleportServiceApi(api_client)
+    v1_create_sip_teleport = V1CreateSipTeleport(
+        name="name_example",
+        destination="destination_example",
+    ) # V1CreateSipTeleport | Required parameters to create a new SIPTeleport
+    idempotency_key = "Idempotency-Key_example" # str | Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing teleport is returned with the status code of 200 (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
     try:
-        # CreateSipTeleport
-        api_response = api_instance.sip_teleport_service_create()
+        api_response = api_instance.sip_teleport_service_create(v1_create_sip_teleport)
+        pprint(api_response)
+    except subspace_openapi_client.ApiException as e:
+        print("Exception when calling SipTeleportServiceApi->sip_teleport_service_create: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.sip_teleport_service_create(v1_create_sip_teleport, idempotency_key=idempotency_key)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
         print("Exception when calling SipTeleportServiceApi->sip_teleport_service_create: %s\n" % e)
@@ -61,7 +71,11 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **v1_create_sip_teleport** | [**V1CreateSipTeleport**](V1CreateSipTeleport.md)| Required parameters to create a new SIPTeleport |
+ **idempotency_key** | **str**| Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing teleport is returned with the status code of 200 | [optional]
 
 ### Return type
 
@@ -73,7 +87,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -81,8 +95,12 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**401** | Returned when the user does not have permission to access the resource. |  -  |
+**400** | Bad request |  -  |
+**401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -90,9 +108,7 @@ This endpoint does not need any parameter.
 # **sip_teleport_service_delete**
 > V1SipTeleportResponse sip_teleport_service_delete(id)
 
-DeleteSipTeleport
 
-DeleteSipTeleport deletes an existing SIP Teleport, specified by its id
 
 ### Example
 
@@ -102,7 +118,6 @@ import time
 import subspace_openapi_client
 from subspace_openapi_client.api import sip_teleport_service_api
 from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -129,7 +144,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # DeleteSipTeleport
         api_response = api_instance.sip_teleport_service_delete(id)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -161,8 +175,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**401** | Returned when the user does not have permission to access the resource. |  -  |
+**400** | Bad request |  -  |
+**401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -170,9 +188,7 @@ Name | Type | Description  | Notes
 # **sip_teleport_service_get**
 > V1SipTeleportResponse sip_teleport_service_get(id)
 
-GetSipTeleport
 
-GetSipTeleport fetches the details of a specific SIP Teleport, specified by its id
 
 ### Example
 
@@ -182,7 +198,6 @@ import time
 import subspace_openapi_client
 from subspace_openapi_client.api import sip_teleport_service_api
 from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -209,7 +224,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # GetSipTeleport
         api_response = api_instance.sip_teleport_service_get(id)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -240,9 +254,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**401** | Returned when the user does not have permission to access the resource. |  -  |
+**200** | A successful response. |  * ETag - Include in the headers of a subsequent PUT to avoid concurrency issues <br>  |
+**400** | Bad request |  -  |
+**401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -250,9 +268,7 @@ Name | Type | Description  | Notes
 # **sip_teleport_service_list**
 > V1ListSipTeleportResponse sip_teleport_service_list()
 
-ListSipTeleports
 
-ListSipTeleports lists all SIP Teleports
 
 ### Example
 
@@ -262,7 +278,6 @@ import time
 import subspace_openapi_client
 from subspace_openapi_client.api import sip_teleport_service_api
 from subspace_openapi_client.model.v1_list_sip_teleport_response import V1ListSipTeleportResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -291,7 +306,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # ListSipTeleports
         api_response = api_instance.sip_teleport_service_list(before=before, limit=limit)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -324,18 +338,20 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**401** | Returned when the user does not have permission to access the resource. |  -  |
+**400** | Bad request |  -  |
+**401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sip_teleport_service_update**
-> V1SipTeleportResponse sip_teleport_service_update(id)
+> V1SipTeleportResponse sip_teleport_service_update(id, v1_update_sip_teleport)
 
-UpdateSipTeleport
 
-UpdateSipTeleport updates an existing SIP Teleport, specified by its id
 
 ### Example
 
@@ -344,8 +360,8 @@ UpdateSipTeleport updates an existing SIP Teleport, specified by its id
 import time
 import subspace_openapi_client
 from subspace_openapi_client.api import sip_teleport_service_api
+from subspace_openapi_client.model.v1_update_sip_teleport import V1UpdateSipTeleport
 from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -369,11 +385,15 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = sip_teleport_service_api.SipTeleportServiceApi(api_client)
     id = "id_example" # str | 
+    v1_update_sip_teleport = V1UpdateSipTeleport(
+        name="name_example",
+        destination="destination_example",
+        status=V1SipTeleportStatus("DISABLED"),
+    ) # V1UpdateSipTeleport | Parameters to update an existing SIPTeleport, minimum requirement of one of them defined to update
 
     # example passing only required values which don't have defaults set
     try:
-        # UpdateSipTeleport
-        api_response = api_instance.sip_teleport_service_update(id)
+        api_response = api_instance.sip_teleport_service_update(id, v1_update_sip_teleport)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
         print("Exception when calling SipTeleportServiceApi->sip_teleport_service_update: %s\n" % e)
@@ -385,6 +405,7 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
+ **v1_update_sip_teleport** | [**V1UpdateSipTeleport**](V1UpdateSipTeleport.md)| Parameters to update an existing SIPTeleport, minimum requirement of one of them defined to update |
 
 ### Return type
 
@@ -396,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -404,8 +425,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**401** | Returned when the user does not have permission to access the resource. |  -  |
+**400** | Bad request |  -  |
+**401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

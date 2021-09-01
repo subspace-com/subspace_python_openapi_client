@@ -4,19 +4,17 @@ All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accelerator_service_create**](AcceleratorServiceApi.md#accelerator_service_create) | **POST** /v1/accelerators | CreateAccelerator
-[**accelerator_service_delete**](AcceleratorServiceApi.md#accelerator_service_delete) | **DELETE** /v1/accelerators/{id} | DeleteAccelerator
-[**accelerator_service_get**](AcceleratorServiceApi.md#accelerator_service_get) | **GET** /v1/accelerators/{id} | GetAccelerator
-[**accelerator_service_list**](AcceleratorServiceApi.md#accelerator_service_list) | **GET** /v1/accelerators | ListAccelerators
-[**accelerator_service_update**](AcceleratorServiceApi.md#accelerator_service_update) | **PUT** /v1/accelerators/{id} | UpdateAccelerator
+[**accelerator_service_create**](AcceleratorServiceApi.md#accelerator_service_create) | **POST** /v1/accelerators | 
+[**accelerator_service_delete**](AcceleratorServiceApi.md#accelerator_service_delete) | **DELETE** /v1/accelerators/{id} | 
+[**accelerator_service_get**](AcceleratorServiceApi.md#accelerator_service_get) | **GET** /v1/accelerators/{id} | 
+[**accelerator_service_list**](AcceleratorServiceApi.md#accelerator_service_list) | **GET** /v1/accelerators | 
+[**accelerator_service_update**](AcceleratorServiceApi.md#accelerator_service_update) | **PUT** /v1/accelerators/{id} | 
 
 
 # **accelerator_service_create**
 > V1Accelerator accelerator_service_create(body)
 
-CreateAccelerator
 
-CreateAccelerator generates a new PacketAccelerator
 
 ### Example
 
@@ -27,7 +25,6 @@ import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
 from subspace_openapi_client.model.v1_accelerator import V1Accelerator
 from subspace_openapi_client.model.body import Body
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -61,7 +58,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # CreateAccelerator
         api_response = api_instance.accelerator_service_create(body)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -70,7 +66,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # CreateAccelerator
         api_response = api_instance.accelerator_service_create(body, idempotency_key=idempotency_key)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -103,8 +98,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
+**400** | Bad request |  -  |
 **401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **201** | Accelerator created |  -  |
 **0** | An unexpected error response. |  -  |
 
@@ -113,9 +112,7 @@ Name | Type | Description  | Notes
 # **accelerator_service_delete**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} accelerator_service_delete(id)
 
-DeleteAccelerator
 
-DeleteAccelerator deletes the given PacketAccelerator, specified by its id
 
 ### Example
 
@@ -124,7 +121,6 @@ DeleteAccelerator deletes the given PacketAccelerator, specified by its id
 import time
 import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -151,7 +147,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # DeleteAccelerator
         api_response = api_instance.accelerator_service_delete(id)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -183,8 +178,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
+**400** | Bad request |  -  |
 **401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -192,9 +191,7 @@ Name | Type | Description  | Notes
 # **accelerator_service_get**
 > V1Accelerator accelerator_service_get(id)
 
-GetAccelerator
 
-GetAccelerator returns the details of a given PacketAccelerator, specified by its id
 
 ### Example
 
@@ -204,7 +201,6 @@ import time
 import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
 from subspace_openapi_client.model.v1_accelerator import V1Accelerator
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -231,7 +227,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # GetAccelerator
         api_response = api_instance.accelerator_service_get(id)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -263,8 +258,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  * ETag - Include in the headers of a subsequent PUT to avoid concurrency issues <br>  |
+**400** | Bad request |  -  |
 **401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -272,9 +271,7 @@ Name | Type | Description  | Notes
 # **accelerator_service_list**
 > V1ListAcceleratorsResponse accelerator_service_list()
 
-ListAccelerators
 
-ListAccelerators returns a list of all existing PacketAccelerators.
 
 ### Example
 
@@ -284,7 +281,6 @@ import time
 import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
 from subspace_openapi_client.model.v1_list_accelerators_response import V1ListAcceleratorsResponse
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -309,13 +305,11 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     api_instance = accelerator_service_api.AcceleratorServiceApi(api_client)
     before = "before_example" # str |  (optional)
     limit = 1 # int |  (optional)
-    q = "q_example" # str | q Provides a query string which filters accelerators in the response. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # ListAccelerators
-        api_response = api_instance.accelerator_service_list(before=before, limit=limit, q=q)
+        api_response = api_instance.accelerator_service_list(before=before, limit=limit)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
         print("Exception when calling AcceleratorServiceApi->accelerator_service_list: %s\n" % e)
@@ -328,7 +322,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **before** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
- **q** | **str**| q Provides a query string which filters accelerators in the response. | [optional]
 
 ### Return type
 
@@ -348,8 +341,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
+**400** | Bad request |  -  |
 **401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -357,9 +354,7 @@ Name | Type | Description  | Notes
 # **accelerator_service_update**
 > V1Accelerator accelerator_service_update(id, body1)
 
-UpdateAccelerator
 
-UpdateAccelerator updates an existing accelerator, specified by its id
 
 ### Example
 
@@ -370,7 +365,6 @@ import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
 from subspace_openapi_client.model.v1_accelerator import V1Accelerator
 from subspace_openapi_client.model.body1 import Body1
-from subspace_openapi_client.model.rpc_status import RpcStatus
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -404,7 +398,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # UpdateAccelerator
         api_response = api_instance.accelerator_service_update(id, body1)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -413,7 +406,6 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # UpdateAccelerator
         api_response = api_instance.accelerator_service_update(id, body1, if_match=if_match)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
@@ -447,8 +439,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
+**400** | Bad request |  -  |
 **401** | Access token is missing or invalid |  -  |
+**402** | Quota exceeded |  -  |
+**403** | Not authorized |  -  |
 **404** | Returned when the resource does not exist. |  -  |
+**429** | Too many client requests |  -  |
 **409** | Edit conflict |  -  |
 **0** | An unexpected error response. |  -  |
 

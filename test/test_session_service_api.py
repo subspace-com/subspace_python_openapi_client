@@ -9,30 +9,25 @@
 """
 
 
-import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_next_page import V1NextPage
-from subspace_openapi_client.model.v1_sip_teleport_response import V1SipTeleportResponse
-globals()['V1NextPage'] = V1NextPage
-globals()['V1SipTeleportResponse'] = V1SipTeleportResponse
-from subspace_openapi_client.model.v1_list_sip_teleport_response import V1ListSipTeleportResponse
+from subspace_openapi_client.api.session_service_api import SessionServiceApi  # noqa: E501
 
 
-class TestV1ListSipTeleportResponse(unittest.TestCase):
-    """V1ListSipTeleportResponse unit test stubs"""
+class TestSessionServiceApi(unittest.TestCase):
+    """SessionServiceApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = SessionServiceApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testV1ListSipTeleportResponse(self):
-        """Test V1ListSipTeleportResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = V1ListSipTeleportResponse()  # noqa: E501
+    def test_session_service_list(self):
+        """Test case for session_service_list
+
+        """
         pass
 
 
