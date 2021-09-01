@@ -15,4 +15,6 @@
 
 # Import APIs into API package:
 from subspace_openapi_client.api.accelerator_service_api import AcceleratorServiceApi
+from subspace_openapi_client.api.project_service_api import ProjectServiceApi
+from subspace_openapi_client.api.session_service_api import SessionServiceApi
 from subspace_openapi_client.api.sip_teleport_service_api import SipTeleportServiceApi
