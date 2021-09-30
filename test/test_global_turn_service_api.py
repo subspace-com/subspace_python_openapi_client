@@ -9,26 +9,25 @@
 """
 
 
-import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_transport_type import V1TransportType
+from subspace_openapi_client.api.global_turn_service_api import GlobalTurnServiceApi  # noqa: E501
 
 
-class TestV1TransportType(unittest.TestCase):
-    """V1TransportType unit test stubs"""
+class TestGlobalTurnServiceApi(unittest.TestCase):
+    """GlobalTurnServiceApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = GlobalTurnServiceApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testV1TransportType(self):
-        """Test V1TransportType"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = V1TransportType()  # noqa: E501
+    def test_global_turn_service_get_global_turn(self):
+        """Test case for global_turn_service_get_global_turn
+
+        """
         pass
 
 

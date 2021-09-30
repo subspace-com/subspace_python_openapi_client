@@ -1,14 +1,14 @@
-# subspace_openapi_client.SessionServiceApi
+# subspace_openapi_client.GlobalTurnServiceApi
 
 All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**session_service_list**](SessionServiceApi.md#session_service_list) | **GET** /v1/accelerator/{accelerator_id}/session | 
+[**global_turn_service_get_global_turn**](GlobalTurnServiceApi.md#global_turn_service_get_global_turn) | **POST** /v1/globalturn | 
 
 
-# **session_service_list**
-> V1ListSessionsResponse session_service_list(accelerator_id)
+# **global_turn_service_get_global_turn**
+> V1GlobalTurnResponse global_turn_service_get_global_turn()
 
 
 
@@ -18,8 +18,8 @@ Method | HTTP request | Description
 ```python
 import time
 import subspace_openapi_client
-from subspace_openapi_client.api import session_service_api
-from subspace_openapi_client.model.v1_list_sessions_response import V1ListSessionsResponse
+from subspace_openapi_client.api import global_turn_service_api
+from subspace_openapi_client.model.v1_global_turn_response import V1GlobalTurnResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -41,39 +41,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with subspace_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = session_service_api.SessionServiceApi(api_client)
-    accelerator_id = "accelerator_id_example" # str | 
-    before = "before_example" # str |  (optional)
-    limit = 1 # int |  (optional)
+    api_instance = global_turn_service_api.GlobalTurnServiceApi(api_client)
 
-    # example passing only required values which don't have defaults set
+    # example, this endpoint has no required or optional parameters
     try:
-        api_response = api_instance.session_service_list(accelerator_id)
+        api_response = api_instance.global_turn_service_get_global_turn()
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
-        print("Exception when calling SessionServiceApi->session_service_list: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.session_service_list(accelerator_id, before=before, limit=limit)
-        pprint(api_response)
-    except subspace_openapi_client.ApiException as e:
-        print("Exception when calling SessionServiceApi->session_service_list: %s\n" % e)
+        print("Exception when calling GlobalTurnServiceApi->global_turn_service_get_global_turn: %s\n" % e)
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accelerator_id** | **str**|  |
- **before** | **str**|  | [optional]
- **limit** | **int**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1ListSessionsResponse**](V1ListSessionsResponse.md)
+[**V1GlobalTurnResponse**](V1GlobalTurnResponse.md)
 
 ### Authorization
 

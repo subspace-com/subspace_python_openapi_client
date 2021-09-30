@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_transport_type import V1TransportType
+from subspace_openapi_client.model.v1_global_turn_server import V1GlobalTurnServer
 
 
-class TestV1TransportType(unittest.TestCase):
-    """V1TransportType unit test stubs"""
+class TestV1GlobalTurnServer(unittest.TestCase):
+    """V1GlobalTurnServer unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestV1TransportType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testV1TransportType(self):
-        """Test V1TransportType"""
+    def testV1GlobalTurnServer(self):
+        """Test V1GlobalTurnServer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = V1TransportType()  # noqa: E501
+        # model = V1GlobalTurnServer()  # noqa: E501
         pass
 
 

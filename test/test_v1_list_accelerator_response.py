@@ -13,11 +13,15 @@ import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_transport_type import V1TransportType
+from subspace_openapi_client.model.v1_accelerator import V1Accelerator
+from subspace_openapi_client.model.v1_next_page import V1NextPage
+globals()['V1Accelerator'] = V1Accelerator
+globals()['V1NextPage'] = V1NextPage
+from subspace_openapi_client.model.v1_list_accelerator_response import V1ListAcceleratorResponse
 
 
-class TestV1TransportType(unittest.TestCase):
-    """V1TransportType unit test stubs"""
+class TestV1ListAcceleratorResponse(unittest.TestCase):
+    """V1ListAcceleratorResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +29,10 @@ class TestV1TransportType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testV1TransportType(self):
-        """Test V1TransportType"""
+    def testV1ListAcceleratorResponse(self):
+        """Test V1ListAcceleratorResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = V1TransportType()  # noqa: E501
+        # model = V1ListAcceleratorResponse()  # noqa: E501
         pass
 
 

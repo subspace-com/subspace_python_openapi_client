@@ -4,11 +4,11 @@ All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accelerator_service_create**](AcceleratorServiceApi.md#accelerator_service_create) | **POST** /v1/accelerators | 
-[**accelerator_service_delete**](AcceleratorServiceApi.md#accelerator_service_delete) | **DELETE** /v1/accelerators/{id} | 
-[**accelerator_service_get**](AcceleratorServiceApi.md#accelerator_service_get) | **GET** /v1/accelerators/{id} | 
-[**accelerator_service_list**](AcceleratorServiceApi.md#accelerator_service_list) | **GET** /v1/accelerators | 
-[**accelerator_service_update**](AcceleratorServiceApi.md#accelerator_service_update) | **PUT** /v1/accelerators/{id} | 
+[**accelerator_service_create**](AcceleratorServiceApi.md#accelerator_service_create) | **POST** /v1/accelerator | 
+[**accelerator_service_delete**](AcceleratorServiceApi.md#accelerator_service_delete) | **DELETE** /v1/accelerator/{id} | 
+[**accelerator_service_get**](AcceleratorServiceApi.md#accelerator_service_get) | **GET** /v1/accelerator/{id} | 
+[**accelerator_service_list**](AcceleratorServiceApi.md#accelerator_service_list) | **GET** /v1/accelerator | 
+[**accelerator_service_update**](AcceleratorServiceApi.md#accelerator_service_update) | **PUT** /v1/accelerator/{id} | 
 
 
 # **accelerator_service_create**
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **accelerator_service_list**
-> V1ListAcceleratorsResponse accelerator_service_list()
+> V1ListAcceleratorResponse accelerator_service_list()
 
 
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 import time
 import subspace_openapi_client
 from subspace_openapi_client.api import accelerator_service_api
-from subspace_openapi_client.model.v1_list_accelerators_response import V1ListAcceleratorsResponse
+from subspace_openapi_client.model.v1_list_accelerator_response import V1ListAcceleratorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1ListAcceleratorsResponse**](V1ListAcceleratorsResponse.md)
+[**V1ListAcceleratorResponse**](V1ListAcceleratorResponse.md)
 
 ### Authorization
 

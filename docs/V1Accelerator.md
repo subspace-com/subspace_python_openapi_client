@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **destination_port** | **int** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**protocol** | [**V1Protocol**](V1Protocol.md) |  | [optional] 
-**subspace_ip** | **str** |  | [optional] 
 **subspace_ipv4** | **str** |  | [optional] 
 **subspace_port** | **int** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sip_teleports** | [**[V1SipTeleportResponse]**](V1SipTeleportResponse.md) |  | [optional] 
+**data** | [**[V1SipTeleportResponse]**](V1SipTeleportResponse.md) |  | [optional] 
 **next_page** | [**V1NextPage**](V1NextPage.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
