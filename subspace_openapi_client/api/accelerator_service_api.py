@@ -417,6 +417,7 @@ class AcceleratorServiceApi(object):
             Keyword Args:
                 before (str): [optional]
                 limit (int): [optional]
+                name (str): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -478,6 +479,7 @@ class AcceleratorServiceApi(object):
                 'all': [
                     'before',
                     'limit',
+                    'name',
                 ],
                 'required': [],
                 'nullable': [
@@ -497,14 +499,18 @@ class AcceleratorServiceApi(object):
                         (str,),
                     'limit':
                         (int,),
+                    'name':
+                        (str,),
                 },
                 'attribute_map': {
                     'before': 'before',
                     'limit': 'limit',
+                    'name': 'name',
                 },
                 'location_map': {
                     'before': 'query',
                     'limit': 'query',
+                    'name': 'query',
                 },
                 'collection_format_map': {
                 }

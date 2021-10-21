@@ -89,6 +89,7 @@ class V1GlobalTurnResponse(ModelNormal):
         lazy_import()
         return {
             'ice_servers': ([V1GlobalTurnServer],),  # noqa: E501
+            'ttl': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -98,6 +99,7 @@ class V1GlobalTurnResponse(ModelNormal):
 
     attribute_map = {
         'ice_servers': 'ice_servers',  # noqa: E501
+        'ttl': 'ttl',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,6 +144,7 @@ class V1GlobalTurnResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             ice_servers ([V1GlobalTurnServer]): [optional]  # noqa: E501
+            ttl (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,6 +227,7 @@ class V1GlobalTurnResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             ice_servers ([V1GlobalTurnServer]): [optional]  # noqa: E501
+            ttl (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

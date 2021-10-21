@@ -50,6 +50,7 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     v1_create_sip_teleport = V1CreateSipTeleport(
         name="name_example",
         destination="destination_example",
+        status="status_example",
     ) # V1CreateSipTeleport | Required parameters to create a new SIPTeleport
     idempotency_key = "Idempotency-Key_example" # str | Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing teleport is returned with the status code of 200 (optional)
 

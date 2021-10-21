@@ -305,11 +305,12 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     api_instance = accelerator_service_api.AcceleratorServiceApi(api_client)
     before = "before_example" # str |  (optional)
     limit = 1 # int |  (optional)
+    name = "name_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.accelerator_service_list(before=before, limit=limit)
+        api_response = api_instance.accelerator_service_list(before=before, limit=limit, name=name)
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
         print("Exception when calling AcceleratorServiceApi->accelerator_service_list: %s\n" % e)
@@ -322,6 +323,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **before** | **str**|  | [optional]
  **limit** | **int**|  | [optional]
+ **name** | **str**|  | [optional]
 
 ### Return type
 

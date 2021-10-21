@@ -30,6 +30,12 @@ class TestSessionServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_session_service_list2(self):
+        """Test case for session_service_list2
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

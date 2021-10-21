@@ -84,6 +84,7 @@ class V1CreateSipTeleport(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'destination': (str,),  # noqa: E501
+            'status': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -94,6 +95,7 @@ class V1CreateSipTeleport(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'destination': 'destination',  # noqa: E501
+        'status': 'status',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +143,7 @@ class V1CreateSipTeleport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            status (str): Enum: [ ENABLED, DISABLED ]. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,6 +231,7 @@ class V1CreateSipTeleport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            status (str): Enum: [ ENABLED, DISABLED ]. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
