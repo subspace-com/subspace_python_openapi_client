@@ -48,12 +48,11 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accelerator_service_api.AcceleratorServiceApi(api_client)
     body = Body(
-        protocol="protocol_example",
         name="name_example",
         destination_ip="destination_ip_example",
         destination_port=1,
         subspace_port=1,
-    ) # Body | Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional
+    ) # Body | Required parameters to create a new PacketAccelerator.
     idempotency_key = "Idempotency-Key_example" # str | Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200 (optional)
 
     # example passing only required values which don't have defaults set
@@ -77,7 +76,7 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)| Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional |
+ **body** | [**Body**](Body.md)| Required parameters to create a new PacketAccelerator. |
  **idempotency_key** | **str**| Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200 | [optional]
 
 ### Return type
@@ -391,11 +390,8 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     api_instance = accelerator_service_api.AcceleratorServiceApi(api_client)
     id = "id_example" # str | 
     body1 = Body1(
-        protocol="protocol_example",
         name="name_example",
-        destination_ip="destination_ip_example",
-        destination_port=1,
-    ) # Body1 | Parameters to update an existing PacketAccelerator, minimum requirement of one of them defined to update
+    ) # Body1 | Parameters to update an existing PacketAccelerator
     if_match = 1 # int |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -420,7 +416,7 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **body1** | [**Body1**](Body1.md)| Parameters to update an existing PacketAccelerator, minimum requirement of one of them defined to update |
+ **body1** | [**Body1**](Body1.md)| Parameters to update an existing PacketAccelerator |
  **if_match** | **int**|  | [optional]
 
 ### Return type

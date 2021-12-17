@@ -389,7 +389,7 @@ with subspace_openapi_client.ApiClient(configuration) as api_client:
     v1_update_sip_teleport = V1UpdateSipTeleport(
         name="name_example",
         destination="destination_example",
-        status=V1SipTeleportStatus("DISABLED"),
+        status=V1SipTeleportStatus("UNKNOWN"),
     ) # V1UpdateSipTeleport | Parameters to update an existing SIPTeleport, minimum requirement of one of them defined to update
 
     # example passing only required values which don't have defaults set
