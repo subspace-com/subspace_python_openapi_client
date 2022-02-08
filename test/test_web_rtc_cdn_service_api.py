@@ -9,30 +9,25 @@
 """
 
 
-import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_accelerator import V1Accelerator
-from subspace_openapi_client.model.v1_next_page import V1NextPage
-globals()['V1Accelerator'] = V1Accelerator
-globals()['V1NextPage'] = V1NextPage
-from subspace_openapi_client.model.v1_list_accelerator_response import V1ListAcceleratorResponse
+from subspace_openapi_client.api.web_rtc_cdn_service_api import WebRtcCdnServiceApi  # noqa: E501
 
 
-class TestV1ListAcceleratorResponse(unittest.TestCase):
-    """V1ListAcceleratorResponse unit test stubs"""
+class TestWebRtcCdnServiceApi(unittest.TestCase):
+    """WebRtcCdnServiceApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = WebRtcCdnServiceApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testV1ListAcceleratorResponse(self):
-        """Test V1ListAcceleratorResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = V1ListAcceleratorResponse()  # noqa: E501
+    def test_web_rtc_cdn_service_get_web_rtc_cdn(self):
+        """Test case for web_rtc_cdn_service_get_web_rtc_cdn
+
+        """
         pass
 
 

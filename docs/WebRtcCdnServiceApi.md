@@ -1,25 +1,26 @@
-# subspace_openapi_client.GlobalTurnServiceApi
+# subspace_openapi_client.WebRtcCdnServiceApi
 
 All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**global_turn_service_get_global_turn**](GlobalTurnServiceApi.md#global_turn_service_get_global_turn) | **POST** /v1/globalturn | 
+[**web_rtc_cdn_service_get_web_rtc_cdn**](WebRtcCdnServiceApi.md#web_rtc_cdn_service_get_web_rtc_cdn) | **POST** /v1/webrtc-cdn | 
 
 
-# **global_turn_service_get_global_turn**
-> V1GlobalTurnResponse global_turn_service_get_global_turn()
+# **web_rtc_cdn_service_get_web_rtc_cdn**
+> V1WebRtcCdnResponse web_rtc_cdn_service_get_web_rtc_cdn()
 
 
 
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
-from subspace_openapi_client.api import global_turn_service_api
-from subspace_openapi_client.model.v1_global_turn_response import V1GlobalTurnResponse
+from subspace_openapi_client.api import web_rtc_cdn_service_api
+from subspace_openapi_client.model.v1_web_rtc_cdn_response import V1WebRtcCdnResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.subspace.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -41,14 +42,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with subspace_openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = global_turn_service_api.GlobalTurnServiceApi(api_client)
+    api_instance = web_rtc_cdn_service_api.WebRtcCdnServiceApi(api_client)
 
     # example, this endpoint has no required or optional parameters
     try:
-        api_response = api_instance.global_turn_service_get_global_turn()
+        api_response = api_instance.web_rtc_cdn_service_get_web_rtc_cdn()
         pprint(api_response)
     except subspace_openapi_client.ApiException as e:
-        print("Exception when calling GlobalTurnServiceApi->global_turn_service_get_global_turn: %s\n" % e)
+        print("Exception when calling WebRtcCdnServiceApi->web_rtc_cdn_service_get_web_rtc_cdn: %s\n" % e)
 ```
 
 
@@ -57,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1GlobalTurnResponse**](V1GlobalTurnResponse.md)
+[**V1WebRtcCdnResponse**](V1WebRtcCdnResponse.md)
 
 ### Authorization
 
@@ -70,6 +71,7 @@ This endpoint does not need any parameter.
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |

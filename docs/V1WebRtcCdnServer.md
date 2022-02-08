@@ -1,11 +1,12 @@
-# V1GlobalTurnResponse
+# V1WebRtcCdnServer
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ice_servers** | [**[V1GlobalTurnServer]**](V1GlobalTurnServer.md) |  | [optional] 
-**ttl** | **int** |  | [optional] 
+**username** | **str** |  | [optional] 
+**credential** | **str** |  | [optional] 
+**urls** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

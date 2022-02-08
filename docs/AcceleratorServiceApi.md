@@ -19,6 +19,7 @@ Method | HTTP request | Description
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
@@ -94,6 +95,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
@@ -116,6 +118,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
@@ -174,6 +177,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
@@ -195,6 +199,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
@@ -254,6 +259,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  * ETag - Include in the headers of a subsequent PUT to avoid concurrency issues <br>  |
@@ -275,6 +281,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
@@ -339,6 +346,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
@@ -360,6 +368,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * OAuth Authentication (accessCode):
+
 ```python
 import time
 import subspace_openapi_client
@@ -434,6 +443,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |

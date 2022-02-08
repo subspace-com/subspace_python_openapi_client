@@ -15,5 +15,5 @@
 
 # Import APIs into API package:
 from subspace_openapi_client.api.accelerator_service_api import AcceleratorServiceApi
-from subspace_openapi_client.api.global_turn_service_api import GlobalTurnServiceApi
 from subspace_openapi_client.api.sip_teleport_service_api import SipTeleportServiceApi
+from subspace_openapi_client.api.web_rtc_cdn_service_api import WebRtcCdnServiceApi

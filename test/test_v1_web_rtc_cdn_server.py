@@ -13,15 +13,11 @@ import sys
 import unittest
 
 import subspace_openapi_client
-from subspace_openapi_client.model.v1_accelerator import V1Accelerator
-from subspace_openapi_client.model.v1_next_page import V1NextPage
-globals()['V1Accelerator'] = V1Accelerator
-globals()['V1NextPage'] = V1NextPage
-from subspace_openapi_client.model.v1_list_accelerator_response import V1ListAcceleratorResponse
+from subspace_openapi_client.model.v1_web_rtc_cdn_server import V1WebRtcCdnServer
 
 
-class TestV1ListAcceleratorResponse(unittest.TestCase):
-    """V1ListAcceleratorResponse unit test stubs"""
+class TestV1WebRtcCdnServer(unittest.TestCase):
+    """V1WebRtcCdnServer unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +25,10 @@ class TestV1ListAcceleratorResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testV1ListAcceleratorResponse(self):
-        """Test V1ListAcceleratorResponse"""
+    def testV1WebRtcCdnServer(self):
+        """Test V1WebRtcCdnServer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = V1ListAcceleratorResponse()  # noqa: E501
+        # model = V1WebRtcCdnServer()  # noqa: E501
         pass
 
 

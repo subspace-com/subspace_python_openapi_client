@@ -64,3 +64,10 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+.openapi-generator
+NOT_IN_GIT
+.git_push.sh.swp
+.gitignore
+.openapi-generator/FILES
+.git
